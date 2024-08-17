@@ -101,7 +101,14 @@ nextBtn.addEventListener("click", async () => {
     }
     catch (e) {
         if (e.message === "Система не знайшла слово, ви виграли!") {
-            endBtn.click();
+            gameStarted = false;
+            startBtn.classList.remove("btn-disabled");
+            nextBtn.classList.add("btn-disabled");
+            endBtn.classList.add("btn-disabled");
+            wordInput.value = "";
+            serverWordField.value = "Місто сервера";
+            await endGameQuery();
+            showErrorToast(e.message);
         }
         else {
             showErrorToast(e.message);
