@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Word Game</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="game-container">
+            <div class="overlay" id="loaderOverlay">
+                <div class="loader"></div>
+            </div>
+
+            <h1>Гра слів: "Міста"</h1>
+
+            <!-- Server word field -->
+            <input
+                type="text"
+                class="server-word"
+                value="Місто сервера"
+                readonly
+            />
+
+            <!-- User input field -->
+            <input
+                type="text"
+                class="word-input"
+                placeholder="Напишіть ваше слово..."
+            />
+
+            <!-- Buttons for game controls -->
+            <div class="button-container">
+                <button class="game-btn start-btn">Почати</button>
+                <button class="game-btn next-btn">Продовжити</button>
+                <button class="game-btn end-btn">Кінець</button>
+            </div>
+
+            <!-- Rules Section -->
+            <div class="rules-container">
+                <h2>Правила</h2>
+                <ol class="rules-list">
+                    <li>Система пропонує місто.</li>
+                    <li>Гравець має назвати слово на останню літеру міста.</li>
+                    <li>
+                        Система відповідає містом на останню літеру міста
+                        Гравця.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"
+        ></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
