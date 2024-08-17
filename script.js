@@ -116,7 +116,8 @@ endBtn.addEventListener("click", async () => {
     serverWordField.value = "Місто сервера";
     wordInput.value = "";
     loaderContainer.classList.add("active");
-    await endGameQuery();
+    const congratulation = await endGameQuery();
+    showErrorToast(congratulation);
     loaderContainer.classList.remove("active");
 });
 
