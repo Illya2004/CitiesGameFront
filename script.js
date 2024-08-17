@@ -93,14 +93,19 @@ nextBtn.addEventListener("click", async () => {
         wordInput.reportValidity();
         return;
     }
-    
-    try {  
+
+    try {
         loaderContainer.classList.add("active");
         const newServerWord = await nextWordQuery(prevServerWord, userWord);
         serverWordField.value = newServerWord;
     }
     catch (e) {
-        showErrorToast(e.message);
+        if (e.message === "Система не знайшла слово, ви виграли!") {
+            endBtn.click();
+        }
+        else {
+            showErrorToast(e.message);
+        }
     }
     finally {
         loaderContainer.classList.remove("active");
