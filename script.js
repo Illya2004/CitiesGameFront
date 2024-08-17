@@ -132,6 +132,9 @@ endBtn.addEventListener("click", async () => {
     showErrorToast(congratulation);
     loaderContainer.classList.remove("active");
 });
+startBtn.addEventListener("touchend", (e) => e.preventDefault());
+nextBtn.addEventListener("touchend", (e) => e.preventDefault());
+endBtn.addEventListener("touchend", (e) => e.preventDefault());
 
 window.onbeforeunload = () => {
     localStorage.setItem("serverWord", serverWordField.value);
