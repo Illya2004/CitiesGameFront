@@ -73,7 +73,7 @@ const showErrorToast = (message) => {
     }).showToast();
 };
 
-startBtn.addEventListener("click", async () => {
+startBtn.addEventListener("touchend", async () => {
     gameStarted = true;
     startBtn.classList.add("btn-disabled");
     nextBtn.classList.remove("btn-disabled");
@@ -84,7 +84,7 @@ startBtn.addEventListener("click", async () => {
     serverWordField.value = serverWord;
     loaderContainer.classList.remove("active");
 });
-nextBtn.addEventListener("click", async () => {
+nextBtn.addEventListener("touchend", async () => {
     const userWord = wordInput.value;
     const prevServerWord = serverWordField.value;
 
@@ -119,7 +119,7 @@ nextBtn.addEventListener("click", async () => {
         wordInput.value = "";
     }
 });
-endBtn.addEventListener("click", async () => {
+endBtn.addEventListener("touchend", async () => {
     gameStarted = false;
     startBtn.classList.remove("btn-disabled");
     nextBtn.classList.add("btn-disabled");
