@@ -1,4 +1,4 @@
-const API_URL = "https://citiesgame.onrender.com:8080";
+const API_URL = "https://citiesgame.onrender.com";
 
 const startBtn = document.querySelector(".start-btn");
 const nextBtn = document.querySelector(".next-btn");
