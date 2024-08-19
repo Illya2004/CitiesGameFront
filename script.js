@@ -16,10 +16,10 @@ if (localStorage.getItem("userWord")) {
 }
 
 if (gameStarted) {
-    startBtn.classList.add("btn-disabled");
+    startBtn.disabled = true;
 } else {
-    nextBtn.classList.add("btn-disabled");
-    endBtn.classList.add("btn-disabled");
+    nextBtn.disabled = true;
+    endBtn.disabled = true;
 }
 
 // API REQUESTS
@@ -75,9 +75,9 @@ const showErrorToast = (message) => {
 
 startBtn.addEventListener("click", async () => {
     gameStarted = true;
-    startBtn.classList.add("btn-disabled");
-    nextBtn.classList.remove("btn-disabled");
-    endBtn.classList.remove("btn-disabled");
+    startBtn.disabled = true;
+    nextBtn.disabled = false;
+    endBtn.disabled = false;
 
     loaderContainer.classList.add("active");
     const serverWord = await startGameQuery();
@@ -102,9 +102,9 @@ nextBtn.addEventListener("click", async () => {
     catch (e) {
         if (e.message === "Система не знайшла слово, ви виграли!") {
             gameStarted = false;
-            startBtn.classList.remove("btn-disabled");
-            nextBtn.classList.add("btn-disabled");
-            endBtn.classList.add("btn-disabled");
+            startBtn.disabled = false;
+            nextBtn.disabled = true;
+            endBtn.disabled = true;
             wordInput.value = "";
             serverWordField.value = "Місто сервера";
             await endGameQuery();
@@ -121,9 +121,9 @@ nextBtn.addEventListener("click", async () => {
 });
 endBtn.addEventListener("click", async () => {
     gameStarted = false;
-    startBtn.classList.remove("btn-disabled");
-    nextBtn.classList.add("btn-disabled");
-    endBtn.classList.add("btn-disabled");
+    startBtn.disabled = false;
+    nextBtn.disabled = true;
+    endBtn.disabled = true;
 
     serverWordField.value = "Місто сервера";
     wordInput.value = "";

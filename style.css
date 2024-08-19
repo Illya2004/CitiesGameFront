@@ -76,34 +76,40 @@ h1 {
     color: #fff;
 }
 
+.game-btn:disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: gray;
+}
+
 .start-btn {
     background-color: #28a745;
 }
 
-.start-btn:hover {
-    background-color: #218838;
+@media(hover: hover) {
+    .start-btn:hover {
+        background-color: #218838;
+    }
 }
 
 .next-btn {
     background-color: #17a2b8;
 }
 
-.next-btn:hover {
-    background-color: #138496;
+@media(hover: hover) {
+    .next-btn:hover {
+        background-color: #138496;
+    }
 }
 
 .end-btn {
     background-color: #dc3545;
 }
 
-.end-btn:hover {
-    background-color: #c82333;
-}
-
-.btn-disabled {
-    pointer-events: none;
-    cursor: default;
-    background-color: gray;
+@media(hover: hover) {
+    .end-btn:hover {
+        background-color: #c82333;
+    }
 }
 
 /* Rules section styling */
@@ -185,6 +191,7 @@ h1 {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
